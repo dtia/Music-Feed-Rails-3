@@ -11,6 +11,8 @@
 	<%= submit_tag "Play all"%>
 <% end %>
 
+<%= button_to 'Play All', { :action => 'play_all', :method => :post, :format => :js }, { :remote => true } %>
+
 <div id="twitterfeedtable">
 	<table>
 		<tr>

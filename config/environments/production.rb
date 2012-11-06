@@ -49,6 +49,7 @@ MusicFeed::Application.configure do
    config.assets.precompile += %w( swfobject.js )
    config.assets.precompile += %w( jquery.js )
    config.assets.precompile += %w( jquery_ujs.js )
+   config.assets.precompile += %w( youtube.js )
    config.assets.precompile += %w( twitterfeeds.css )
 
   # Disable delivery errors, bad email addresses will be ignored

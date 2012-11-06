@@ -33,9 +33,9 @@ class TwitterfeedsController < ApplicationController
     def play_all
       @twitterfeeds = Twitterfeed.find(:all)
       @video_list = Twitterfeed.get_all_videos_for_page(@twitterfeeds)
-
+      puts 'im in here yo'
       respond_with do |format|
-        format.js { render :js => "alert('hihi');"}
+        format.js
       end
     end
 

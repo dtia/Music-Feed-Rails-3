@@ -1,5 +1,6 @@
 <head>
 <%= javascript_include_tag 'swfobject' %>
+<%= javascript_include_tag 'youtube' %>
 </head>
 
 <input type="button" onclick="playNextVideo();" value="Next song" />
@@ -22,10 +23,9 @@
 	
 	setVideoList(videoListArray);
 	video_id = getFirstVideo();
-	
 	var params = { allowScriptAccess: "always", allowFullScreen: "true" };
   	var atts = { id: "myytplayer" };
-  	swfobject.embedSWF("http://www.youtube.com/e/" + video_id + "?enablejsapi=1&playerapiid=ytplayerall",
-                     "ytapiplayer", "500", "360", "8", null, null, params, atts);
+	var url = "http://www.youtube.com/e/" + video_id + "?enablejsapi=1&playerapiid=ytplayerall";
+  	swfobject.embedSWF(url, "ytapiplayer", "500", "360", "8", null, null, params, atts);
 	
 </script>
