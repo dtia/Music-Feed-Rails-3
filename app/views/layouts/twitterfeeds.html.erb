@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>#nowplaying with youtube</title>
+</head>
+<body>
+	<div id = "nowplaying_page">
+		<p style="color: green"><%= flash[:notice] %></p>
+
+		<div id = "video_container">
+		</div>
+		
+		<div id = "main">
+			<%= yield :layout %>			
+		</div>
+				
+		<div id = "description">
+			<p class= "italic">Description: This site loads the latest #nowplaying tweets from twitter and allows you to watch the corresponding youtube video. On refresh, it will load the most recent #nowplaying tweets.</p>
+		</div>
+	</div>
+</body>
+</html>

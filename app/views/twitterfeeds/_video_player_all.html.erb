@@ -1,0 +1,31 @@
+<head>
+<%= javascript_include_tag 'swfobject' %>
+</head>
+
+<input type="button" onclick="playNextVideo();" value="Next song" />
+<br>
+<br>
+
+<p id="video_title"></p>
+
+<div id="ytapiplayer">
+    You need Flash player 8+ and JavaScript enabled to view this video.
+</div>
+
+
+<script type="text/javascript">
+	var videoListArray = [];
+
+	<% video_list.each do |video_info| %>
+		videoListArray = videoListArray.concat([["<%=h video_info[0] %>", "<%=h video_info[1] %>"]]);
+	<% end %>
+	
+	setVideoList(videoListArray);
+	video_id = getFirstVideo();
+	
+	var params = { allowScriptAccess: "always", allowFullScreen: "true" };
+  	var atts = { id: "myytplayer" };
+  	swfobject.embedSWF("http://www.youtube.com/e/" + video_id + "?enablejsapi=1&playerapiid=ytplayerall",
+                     "ytapiplayer", "500", "360", "8", null, null, params, atts);
+	
+</script>
