@@ -52,7 +52,7 @@ function getNextVideoObject() {
 function getFirstVideo() {
 	videoMarker = 0;
 	firstVideoTitle = videoList[videoMarker][1];
-	$('video_title').innerHTML = firstVideoTitle;
+	$("#video_title").html(firstVideoTitle);
 	return videoList[videoMarker][0];
 }
 
@@ -62,9 +62,7 @@ function playNextVideo() {
 	nextVideoId = videoObject[0];
 	nextVideoTitle = videoObject[1];
 	
-	$('video_title').innerHTML = nextVideoTitle;
-	ytplayer.loadVideoById(nextVideoId);
-	$('video_title').innerHTML = nextVideoTitle;
+	$("#video_title").html(nextVideoTitle);
 	ytplayer.loadVideoById(nextVideoId);
 }
 
