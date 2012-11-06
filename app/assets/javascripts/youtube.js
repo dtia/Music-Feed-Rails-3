@@ -41,7 +41,8 @@ function getNextVideoObject() {
 	}
 	else {
 		// redirect to index
-		window.location = '/twitterfeeds'
+		window.location.replace("/");
+		
 		// console.log("refreshed");
 		// console.log("pre-post");
 		// 		post_to_url('/twitterfeeds/play_all', {'authenticity_token' : 'd91b5659aa3f7a4105a882ae106912e88a36f2a7'});
@@ -58,12 +59,14 @@ function getFirstVideo() {
 
 function playNextVideo() {
 	videoObject = getNextVideoObject();
-	// get next video id
-	nextVideoId = videoObject[0];
-	nextVideoTitle = videoObject[1];
+	if (typeof videoObject !== "undefined") {
+		// get next video id
+		nextVideoId = videoObject[0];
+		nextVideoTitle = videoObject[1];
 	
-	$("#video_title").html(nextVideoTitle);
-	ytplayer.loadVideoById(nextVideoId);
+		$("#video_title").html(nextVideoTitle);
+		ytplayer.loadVideoById(nextVideoId);
+	}
 }
 
 function post_to_url(path, params, method) {
