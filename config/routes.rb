@@ -7,6 +7,7 @@ MusicFeed::Application.routes.draw do
   # Keep in mind you can assign values other than :controller and :action
   match 'twitterfeeds/play_video' => 'twitterfeeds#play_video'
   match 'twitterfeeds/play_all' => 'twitterfeeds#play_all'
+  match 'admin' => 'twitterfeeds#admin'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

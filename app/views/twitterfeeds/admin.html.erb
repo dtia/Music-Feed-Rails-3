@@ -16,13 +16,15 @@
 <div id="twitterfeedtable">
 	<table>
 		<tr>
-			<th>Tweet</th>
-			<th>Video</th>
+		  <th>Tweet</th>
+		  <th>Song Query</th>
+		<th>Video</th>
 		</tr>
 
 		<% for twitterfeed in @twitterfeeds %>
 		  <tr>
 			<td><span id="entry"><%=h twitterfeed.text %></span></td>
+			<td><%=h twitterfeed.user %></td>
 			<td>
 				<% if twitterfeed.video != nil %>			
 					<%= button_to 'Play this Video', { :action => 'play_video', :method => :post, :format => :js, :video_id => twitterfeed.video, :title => twitterfeed.title}, { :remote => true } %>
